@@ -1,0 +1,38 @@
+# Laravel / PHP
+/vendor/
+/node_modules/
+/public/build/
+/public/hot
+/storage/*.key
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/logs/*
+/bootstrap/cache/*.php
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+auth.json
+
+# IDE / OS
+/.idea/
+/.vscode/
+.DS_Store
+Thumbs.db
+
+# Testing / coverage
+.phpunit.result.cache
+/coverage/
+
+# Local databases and dumps
+*.sqlite
+*.sqlite3
+*.sql
+*.dump
+*.bak
+
+# Temporary files
+*.log
+*.tmp

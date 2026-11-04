@@ -1,0 +1,740 @@
+{
+	"info": {
+		"_postman_id": "cfa7bc0a-3dca-452e-99b5-03e403357b7c",
+		"name": "collection_project",
+		"description": "# 🚀 Laravel API Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44648056",
+		"_collection_link": "https://web.postman.co/workspace/eg%3A-jihad-sh's-Workspace~73952a22-e494-4bcc-8e08-cf063a235f62/collection/44648056-cfa7bc0a-3dca-452e-99b5-03e403357b7c?source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/api/user",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						},
+						"description": "Get authenticated user profile"
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "username",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "user@example.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password123",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "password123",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "1234567890",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						},
+						"description": "Register a new user"
+					},
+					"response": []
+				},
+				{
+					"name": "verify otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "user@example.com",
+									"type": "text"
+								},
+								{
+									"key": "otp",
+									"value": "1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/verifyotp",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"verifyotp"
+							]
+						},
+						"description": "Verify OTP code"
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "identifier",
+									"value": "user@example.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						},
+						"description": "Login user"
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/logout",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"logout"
+							]
+						},
+						"description": "Logout user"
+					},
+					"response": []
+				},
+				{
+					"name": "forget password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "user@example.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/forgetpassword",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"forgetpassword"
+							]
+						},
+						"description": "Request password reset"
+					},
+					"response": []
+				},
+				{
+					"name": "reset password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "user@example.com",
+									"type": "text"
+								},
+								{
+									"key": "otp",
+									"value": "1234",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "newpassword123",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "newpassword123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/resetpassword",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"resetpassword"
+							]
+						},
+						"description": "Reset password with OTP"
+					},
+					"response": []
+				},
+				{
+					"name": "delete account",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/delete-account",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"delete-account"
+							]
+						},
+						"description": "Delete user account"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Property",
+			"item": [
+				{
+					"name": "Get All Properties",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/property/getall",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"property",
+								"getall"
+							]
+						},
+						"description": "Get all approved properties"
+					},
+					"response": []
+				},
+				{
+					"name": "Show Property",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/property/show/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"property",
+								"show",
+								"1"
+							]
+						},
+						"description": "Show property details"
+					},
+					"response": []
+				},
+				{
+					"name": "User Properties",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/property/me",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"property",
+								"me"
+							]
+						},
+						"description": "Get authenticated user's properties"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Property",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "type_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "subtype_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Property Title",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "rent",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Property description",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "2000",
+									"type": "text"
+								},
+								{
+									"key": "area",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "floor",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "rooms_count",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "latitude",
+									"value": "35.123456",
+									"type": "text"
+								},
+								{
+									"key": "longitude",
+									"value": "33.123456",
+									"type": "text"
+								},
+								{
+									"key": "has_pool",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "has_garden",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "has_elevator",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "solar_energy",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "features",
+									"value": "Modern kitchen, Air conditioning",
+									"type": "text"
+								},
+								{
+									"key": "nearby_services",
+									"value": "School, Hospital, Shopping mall",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/property/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"property",
+								"create"
+							]
+						},
+						"description": "Create a new property"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Property",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "type_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "subtype_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Updated Property Title",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "rent",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Updated property description",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "2500",
+									"type": "text"
+								},
+								{
+									"key": "area",
+									"value": "120",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/property/update/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"property",
+								"update",
+								"1"
+							]
+						},
+						"description": "Update property details"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Property",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/property/delete/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"property",
+								"delete",
+								"1"
+							]
+						},
+						"description": "Delete a property"
+					},
+					"response": []
+				},
+				{
+					"name": "Filter Properties",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "type_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "subtype_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "rent",
+									"type": "text"
+								},
+								{
+									"key": "min_price",
+									"value": "1000",
+									"type": "text"
+								},
+								{
+									"key": "max_price",
+									"value": "5000",
+									"type": "text"
+								},
+								{
+									"key": "min_area",
+									"value": "50",
+									"type": "text"
+								},
+								{
+									"key": "max_area",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "min_floor",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "max_floor",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "min_count",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "max_count",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "has_pool",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "has_garden",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "has_elevator",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "solar_energy",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/property/filter",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"property",
+								"filter"
+							]
+						},
+						"description": "Filter properties by various criteria"
+					},
+					"response": []
+				},
+				{
+					"name": "Change Property Status (Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status",
+									"value": "reserved",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/property/status",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"property",
+								"status"
+							]
+						},
+						"description": "Change property status (Admin only)"
+					},

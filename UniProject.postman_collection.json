@@ -1,0 +1,3144 @@
+{
+    "info": {
+        "name": "UniProject API",
+        "description": "Complete API collection for UniProject, grouped by Mobile and Admin. Includes all routes from routes/api.php with required fields inferred from controllers.",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Mobile",
+            "item": [
+                {
+                    "name": "Auth",
+                    "item": [
+                        {
+                            "name": "Register",
+                            "request": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "name",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "email",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "password",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "password_confirmation",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "phone_number",
+                                            "value": "",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/register",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "register"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Verify OTP",
+                            "request": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "email",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "otp",
+                                            "value": "",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/verifyotp",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "verifyotp"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Login",
+                            "request": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "identifier",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "password",
+                                            "value": "",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/login",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "login"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Profile (Me)",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/user",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "user"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Logout",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/logout",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "logout"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Forget Password",
+                            "request": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "email",
+                                            "value": "",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/forgetpassword",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "forgetpassword"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Reset Password",
+                            "request": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "email",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "otp",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "password",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "password_confirmation",
+                                            "value": "",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/resetpassword",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "resetpassword"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Delete Account",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "identifier",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "password",
+                                            "value": "",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/delete-account",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "delete-account"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Properties",
+                    "item": [
+                        {
+                            "name": "Public - List Approved",
+                            "request": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/property/getall",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "property",
+                                        "getall"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Public - Show Approved",
+                            "request": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/property/show/{{id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "property",
+                                        "show",
+                                        "{{id}}"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "My Properties",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/property/me",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "property",
+                                        "me"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Create Property",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "type_id",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "subtype_id",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "title",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "status",
+                                            "value": "sale|rent|reserved",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "description",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "price",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "area",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "floor",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "rooms_count",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "latitude",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "longitude",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "has_pool",
+                                            "value": "0",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "has_garden",
+                                            "value": "0",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "has_elevator",
+                                            "value": "0",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "solar_energy",
+                                            "value": "0",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "features",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "nearby_services",
+                                            "value": "",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/property/create",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "property",
+                                        "create"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Update Property",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "type_id",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "subtype_id",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "title",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "status",
+                                            "value": "sale|rent|reserved",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "description",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "price",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "area",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "floor",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "rooms_count",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "latitude",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "longitude",
+                                            "value": "",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/property/update/{{id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "property",
+                                        "update",
+                                        "{{id}}"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Delete Property",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "DELETE",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/property/delete/{{id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "property",
+                                        "delete",
+                                        "{{id}}"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Filter Properties",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "user_id",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "type_id",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "subtype_id",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "title",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "status",
+                                            "value": "sale|rent|reserved",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "min_price",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "max_price",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "min_area",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "max_area",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "min_floor",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "max_floor",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "min_count",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "max_count",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "has_pool",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "has_garden",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "has_elevator",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "solar_energy",
+                                            "value": "",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/property/filter",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "property",
+                                        "filter"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Property Images",
+                    "item": [
+                        {
+                            "name": "Add Image",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "image",
+                                            "type": "file",
+                                            "src": ""
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/property/image/add/{{property_id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "property",
+                                        "image",
+                                        "add",
+                                        "{{property_id}}"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Delete Image",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "DELETE",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/property/image/delete/{{id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "property",
+                                        "image",
+                                        "delete",
+                                        "{{id}}"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Get Image URL",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/property/image/geturl/{{id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "property",
+                                        "image",
+                                        "geturl",
+                                        "{{id}}"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Property Documents",
+                    "item": [
+                        {
+                            "name": "Add Document",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "document",
+                                            "type": "file",
+                                            "src": ""
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/property/document/add/{{property_id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "property",
+                                        "document",
+                                        "add",
+                                        "{{property_id}}"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Delete Document",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "DELETE",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/property/document/delete/{{id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "property",
+                                        "document",
+                                        "delete",
+                                        "{{id}}"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Get Document",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/property/document/geturl/{{id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "property",
+                                        "document",
+                                        "geturl",
+                                        "{{id}}"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Favorites",
+                    "item": [
+                        {
+                            "name": "List Favorites",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/favorites/get",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "favorites",
+                                        "get"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Add Favorite",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "POST",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/favorites/store/{{property_id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "favorites",
+                                        "store",
+                                        "{{property_id}}"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Delete Favorite",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "DELETE",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/favorites/delete/{{property_id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "favorites",
+                                        "delete",
+                                        "{{property_id}}"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Ratings",
+                    "item": [
+                        {
+                            "name": "List Ratings for Property",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/property/ratings/{{property_id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "property",
+                                        "ratings",
+                                        "{{property_id}}"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Create/Update Rating",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "property_id",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "rating",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "comment",
+                                            "value": "",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/ratings/store",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "ratings",
+                                        "store"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Delete Rating",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "DELETE",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/ratings/delete/{{rating_id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "ratings",
+                                        "delete",
+                                        "{{rating_id}}"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Notifications",
+                    "item": [
+                        {
+                            "name": "List My Notifications",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/notifications",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "notifications"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Unread Count",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/notifications/unread-count",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "notifications",
+                                        "unread-count"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Mark As Read",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "PATCH",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/notifications/{{id}}/read",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "notifications",
+                                        "{{id}}",
+                                        "read"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Mark All As Read",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "PATCH",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/notifications/read-all",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "notifications",
+                                        "read-all"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Delete Notification",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "DELETE",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/notifications/{{id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "notifications",
+                                        "{{id}}"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Banks",
+                    "item": [
+                        {
+                            "name": "List Banks",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/banks",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "banks"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Show Bank",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/banks/show/{{id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "banks",
+                                        "show",
+                                        "{{id}}"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Workshops",
+                    "item": [
+                        {
+                            "name": "List Workshops",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/workshops/get",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "workshops",
+                                        "get"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Wallet",
+                    "item": [
+                        {
+                            "name": "View Wallet",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/wallet",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "wallet"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Deposit to Wallet",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "amount",
+                                            "value": "",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/wallet/deposit",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "wallet",
+                                        "deposit"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Withdraw from Wallet",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "amount",
+                                            "value": "",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/wallet/withdraw",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "wallet",
+                                        "withdraw"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Reservations",
+                    "item": [
+                        {
+                            "name": "List Reservations",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/reservations",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "reservations"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Create Reservation",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "property_id",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "start_date",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "end_date",
+                                            "value": "",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/reservations/create",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "reservations",
+                                        "create"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Show Reservation",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/reservations/{{id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "reservations",
+                                        "{{id}}"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Update Reservation",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "PUT",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "start_date",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "end_date",
+                                            "value": "",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/reservations/update/{{id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "reservations",
+                                        "update",
+                                        "{{id}}"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Delete Reservation",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "DELETE",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/reservations/delete/{{id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "reservations",
+                                        "delete",
+                                        "{{id}}"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Payments",
+                    "item": [
+                        {
+                            "name": "List Payments",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/payments",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "payments"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Create Payment",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "amount",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "payment_method",
+                                            "value": "",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/payments/create",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "payments",
+                                        "create"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Show Payment",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/payments/{{id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "payments",
+                                        "{{id}}"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Update Payment",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "PUT",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "amount",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "payment_method",
+                                            "value": "",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/payments/update/{{id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "payments",
+                                        "update",
+                                        "{{id}}"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Delete Payment",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "DELETE",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/payments/delete/{{id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "payments",
+                                        "delete",
+                                        "{{id}}"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Invoices",
+                    "item": [
+                        {
+                            "name": "List Invoices",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/invoices",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "invoices"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Create Invoice",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "amount",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "description",
+                                            "value": "",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/invoices/create",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "invoices",
+                                        "create"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Show Invoice",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/invoices/{{id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "invoices",
+                                        "{{id}}"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Update Invoice",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "PUT",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "amount",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "description",
+                                            "value": "",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/invoices/update/{{id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "invoices",
+                                        "update",
+                                        "{{id}}"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Delete Invoice",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "DELETE",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/invoices/delete/{{id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "invoices",
+                                        "delete",
+                                        "{{id}}"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Ownership Documents",
+                    "item": [
+                        {
+                            "name": "List Documents",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/documents",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "documents"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Upload Document",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "document",
+                                            "type": "file",
+                                            "src": ""
+                                        },
+                                        {
+                                            "key": "title",
+                                            "value": "",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/documents/create",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "documents",
+                                        "create"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Show Document",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/documents/{{id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "documents",
+                                        "{{id}}"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Update Document",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "PUT",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "title",
+                                            "value": "",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/documents/update/{{id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "documents",
+                                        "update",
+                                        "{{id}}"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Delete Document",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "DELETE",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/documents/delete/{{id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "documents",
+                                        "delete",
+                                        "{{id}}"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Messages",
+                    "item": [
+                        {
+                            "name": "List Messages",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/messages",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "messages"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Send Message",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "recipient_id",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "message",
+                                            "value": "",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/messages/create",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "messages",
+                                        "create"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Show Message",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/messages/{{id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "messages",
+                                        "{{id}}"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Update Message",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "PUT",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "message",
+                                            "value": "",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/messages/update/{{id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "messages",
+                                        "update",
+                                        "{{id}}"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Delete Message",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "DELETE",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/messages/delete/{{id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "messages",
+                                        "delete",
+                                        "{{id}}"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Mediators",
+                    "item": [
+                        {
+                            "name": "List Mediators",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/mediators",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "mediators"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Create Mediator",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "name",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "phone",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "email",
+                                            "value": "",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/mediators/create",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "mediators",
+                                        "create"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Show Mediator",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/mediators/{{id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "mediators",
+                                        "{{id}}"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Update Mediator",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "PUT",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "name",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "phone",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "email",
+                                            "value": "",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/mediators/update/{{id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "mediators",
+                                        "update",
+                                        "{{id}}"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Delete Mediator",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "DELETE",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/mediators/delete/{{id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "mediators",
+                                        "delete",
+                                        "{{id}}"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Appointments",
+                    "item": [
+                        {
+                            "name": "List Appointments",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/appointments",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "appointments"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Create Appointment",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "mediator_id",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "date",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "time",
+                                            "value": "",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/appointments/create",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "appointments",
+                                        "create"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Show Appointment",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/appointments/{{id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "appointments",
+                                        "{{id}}"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Update Appointment",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "PUT",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "date",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "time",
+                                            "value": "",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/appointments/update/{{id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "appointments",
+                                        "update",
+                                        "{{id}}"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Delete Appointment",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{auth_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "DELETE",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/appointments/delete/{{id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "appointments",
+                                        "delete",
+                                        "{{id}}"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Admin",
+            "item": [
+                {
+                    "name": "Properties Admin",
+                    "item": [
+                        {
+                            "name": "Approve Property",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{admin_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "POST",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/property/approve/{{id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "property",
+                                        "approve",
+                                        "{{id}}"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Change Property Status",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{admin_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "status",
+                                            "value": "sale|rent|reserved",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "id",
+                                            "value": "",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/property/status",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "property",
+                                        "status"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Notifications Admin",
+                    "item": [
+                        {
+                            "name": "Send Notifications",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{admin_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "user_ids[]",
+                                            "value": "1",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "title",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "content",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "action_url",
+                                            "value": "",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/admin/notifications",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "admin",
+                                        "notifications"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Banks Admin",
+                    "item": [
+                        {
+                            "name": "Create Bank",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{admin_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "name",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "account_number",
+                                            "value": "",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/banks/create",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "banks",
+                                        "create"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Update Bank",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{admin_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "PUT",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "name",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "account_number",
+                                            "value": "",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/banks/update/{{id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "banks",
+                                        "update",
+                                        "{{id}}"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Delete Bank",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{admin_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "DELETE",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/banks/delete/{{id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "banks",
+                                        "delete",
+                                        "{{id}}"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Workshops Admin",
+                    "item": [
+                        {
+                            "name": "Create Workshop",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{admin_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "name",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "work_type",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "phone_number",
+                                            "value": "",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "location",
+                                            "value": "",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/api/workshops/create",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "workshops",
+                                        "create"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Delete Workshop",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{admin_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "DELETE",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/workshops/delete/{{id}}",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "workshops",
+                                        "delete",
+                                        "{{id}}"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Statistics Admin",
+                    "item": [
+                        {
+                            "name": "User Count",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{admin_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/user/count",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "user",
+                                        "count"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Property Count",
+                            "request": {
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "{{admin_token}}",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{base_url}}/api/property/count",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "api",
+                                        "property",
+                                        "count"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "event": [],
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "http://127.0.0.1:8000"
+        },
+        {
+            "key": "auth_token",
+            "value": ""
+        },
+        {
+            "key": "admin_token",
+            "value": ""
+        }
+    ]
+}
