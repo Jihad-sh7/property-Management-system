@@ -2,7 +2,6 @@
 
 A Laravel-based real estate management platform that brings property listings and key real-estate operations together in one application. The system supports property discovery and management, user accounts, reservations, financial operations, communication, and administrative workflows.
 
-> **Project status:** This repository contains a working project that has been used in a real project environment. The documentation describes the application capabilities and the API routes included in this repository.
 
 ## Overview
 
@@ -178,14 +177,6 @@ Accept: application/json
 ```
 
 Refer to the API documentation and the relevant controller implementation for request payloads, validation rules, and response formats.
-
-## Security Notes
-
-- Never commit `.env`, passwords, API keys, access tokens, private certificates, or production credentials.
-- Keep `.env.example` limited to variable names and safe placeholder values.
-- Do not publish real user information, property-owner documents, private images, or production database exports.
-- Review authorization rules before deploying the application to a public environment.
-- Use HTTPS and secure storage/access policies in production.
 
 ## License
 
