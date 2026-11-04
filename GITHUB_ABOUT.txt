@@ -1,5 +1,0 @@
-GitHub About description:
-Laravel-based real estate management platform for property listings, reservations, payments, invoices, wallets, and administrative workflows.
-
-Suggested topics:
-laravel, php, real-estate, property-management, rest-api, laravel-sanctum, mysql, backend
